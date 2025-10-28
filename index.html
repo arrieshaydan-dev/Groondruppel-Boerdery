@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groendruppel Boerdery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header with Logo -->
+  <header>
+    <img src="images/groendruppel-logo.jpeg" alt="Groendruppel Boerdery Logo" class="logo">
+    <h1>Groendruppel Boerdery</h1>
+    <p>Growing with care, from soil to soul 🌱</p>
+  </header>
+
+  <!-- About Section -->
+  <section class="about">
+    <h2>About Our Farm</h2>
+    <p>
+      Groendruppel Boerdery is a family-owned farm dedicated to sustainable, eco-friendly agriculture.
+      We nurture both crops and animals with care and respect for nature, ensuring that every product
+      from our fields reflects quality, freshness, and love for the land.
+    </p>
+  </section>
+
+  <!-- Slideshow Section -->
+  <section class="slideshow-container">
+    <!-- 23 Slides -->
+    <div class="slide fade"><img src="images/farm1.jpg.jpeg" alt="Farm view 1"></div>
+    <div class="slide fade"><img src="images/farm2.jpg.jpeg" alt="Farm view 2"></div>
+    <div class="slide fade"><img src="images/farm3.jpg.jpeg" alt="Farm view 3"></div>
+    <div class="slide fade"><img src="images/farm4.jpg.jpeg" alt="Farm view 4"></div>
+    <div class="slide fade"><img src="images/farm5.jpg.jpeg" alt="Farm view 5"></div>
+    <div class="slide fade"><img src="images/farm6.jpg.jpeg" alt="Farm view 6"></div>
+    <div class="slide fade"><img src="images/farm7.jpg.jpeg" alt="Farm view 7"></div>
+    <div class="slide fade"><img src="images/farm8.jpg.jpeg" alt="Farm view 8"></div>
+    <div class="slide fade"><img src="images/farm9.jpg.jpeg" alt="Farm view 9"></div>
+    <div class="slide fade"><img src="images/farm10.jpg.jpeg" alt="Farm view 10"></div>
+    <div class="slide fade"><img src="images/farm11.jpg.jpeg" alt="Farm view 11"></div>
+    <div class="slide fade"><img src="images/farm12.jpg.jpeg" alt="Farm view 12"></div>
+    <div class="slide fade"><img src="images/farm13.jpg.jpeg" alt="Farm view 13"></div>
+    <div class="slide fade"><img src="images/farm14.jpg.jpeg" alt="Farm view 14"></div>
+    <div class="slide fade"><img src="images/farm15.jpg.jpeg" alt="Farm view 15"></div>
+    <div class="slide fade"><img src="images/farm16.jpg.jpeg" alt="Farm view 16"></div>
+    <div class="slide fade"><img src="images/farm17.jpg.jpeg" alt="Farm view 17"></div>
+    <div class="slide fade"><img src="images/farm18.jpg.jpeg" alt="Farm view 18"></div>
+    <div class="slide fade"><img src="images/farm19.jpg.jpeg" alt="Farm view 19"></div>
+    <div class="slide fade"><img src="images/farm20.jpg.jpeg" alt="Farm view 20"></div>
+    <div class="slide fade"><img src="images/farm22.jpg.jpeg" alt="Farm view 22"></div>
+    <div class="slide fade"><img src="images/farm25.jpg.jpeg" alt="Farm view 25"></div>
+    <div class="slide fade"><img src="images/farm26.jpg.jpeg" alt="Farm view 26"></div>
+
+    <!-- Navigation arrows -->
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Groendruppel Boerdery</strong></p>
+    <p>📞 076 482 9255</p>
+    <p>📧 groendrupel@gmail.com</p>
+    <p>🆔 2025/314300/07</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Groendruppel Boerdery | All Rights Reserved</p>
+  </footer>
+
+  <!-- Slideshow Script -->
+  <script>
+    let slideIndex = 0;
+    let slides = document.getElementsByClassName("slide");
+    let autoSlideTimer;
+
+    showSlide(slideIndex);
+    autoSlide();
+
+    function changeSlide(n) {
+      clearTimeout(autoSlideTimer);
+      showSlide(slideIndex += n);
+      autoSlide();
+    }
+
+    function showSlide(n) {
+      if (n >= slides.length) slideIndex = 0;
+      if (n < 0) slideIndex = slides.length - 1;
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex].style.display = "block";
+    }
+
+    function autoSlide() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex >= slides.length) slideIndex = 0;
+      slides[slideIndex].style.display = "block";
+      autoSlideTimer = setTimeout(autoSlide, 4000); // 4 seconds
+    }
+  </script>
+
+</body>
+</html>
